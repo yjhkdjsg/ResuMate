@@ -1,0 +1,208 @@
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500&display=swap");
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@theme {
+  --font-sans: "DM Sans", Helvetica, Arial, sans-serif;
+  --font-display: "Playfair Display", Georgia, serif;
+  --font-serif: "Playfair Display", Georgia, serif;
+  --font-mono: "DM Mono", monospace;
+
+  --color-bg: var(--bg);
+  --color-surface: var(--surface);
+  --color-surface-2: var(--surface-2);
+  --color-border: var(--border);
+  --color-ink: var(--ink);
+  --color-ink-muted: var(--ink-muted);
+  --color-accent: var(--accent);
+  --color-accent-strong: var(--accent-strong);
+  --color-accent-soft: var(--accent-soft);
+  --color-success: var(--success);
+  --color-warning: var(--warning);
+  --color-danger: var(--danger);
+
+  --radius-card: 0px;
+  --radius-pill: 0px;
+}
+
+:root,
+[data-theme="light"] {
+  --bg: #ffffff;
+  --surface: #fafaf9;
+  --surface-2: #f5f5f3;
+  --border: #d9d7d1;
+  --ink: #1a1815;
+  --ink-muted: #7a7570;
+  --accent: #1a1815;
+  --accent-strong: #1a1815;
+  --accent-soft: #ebe8e1;
+  --accent-hero: #1a1815;
+  --accent-hero-2: #3a3530;
+  --success: #1a1815;
+  --warning: #7a7570;
+  --danger: #1a1815;
+  --shadow-card: none;
+  --shadow-hover: none;
+}
+
+[data-theme="dark"] {
+  --bg: #0f0f0d;
+  --surface: #1a1a17;
+  --surface-2: #25251f;
+  --border: #3a3933;
+  --ink: #f5f3ed;
+  --ink-muted: #a9a39b;
+  --accent: #f5f3ed;
+  --accent-strong: #f5f3ed;
+  --accent-soft: #2f2d28;
+  --accent-hero: #f5f3ed;
+  --accent-hero-2: #dddad2;
+  --success: #f5f3ed;
+  --warning: #a9a39b;
+  --danger: #f5f3ed;
+  --shadow-card: none;
+  --shadow-hover: none;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--bg);
+  color: var(--ink);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-feature-settings: "";
+  letter-spacing: 0em;
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+* {
+  border-color: var(--border);
+}
+
+.shadow-card {
+  box-shadow: var(--shadow-card);
+}
+.shadow-hover {
+  box-shadow: var(--shadow-hover);
+}
+
+.font-display {
+  font-family: var(--font-display);
+  letter-spacing: -0.015em;
+  font-weight: 500;
+}
+
+.font-serif {
+  font-family: var(--font-serif);
+}
+
+.font-mono,
+kbd {
+  font-family: var(--font-mono);
+}
+
+::selection {
+  background: var(--ink);
+  color: var(--bg);
+}
+
+a,
+button {
+  -webkit-tap-highlight-color: transparent;
+}
+
+button:focus-visible,
+a:focus-visible {
+  outline: 1px solid var(--ink);
+  outline-offset: 2px;
+}
+
+.tabular {
+  font-variant-numeric: tabular-nums;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.12);
+  border-radius: 0;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 0, 0, 0.2);
+}
+[data-theme="dark"] ::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.12);
+}
+[data-theme="dark"] ::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/* Swiss Grid Utilities */
+.grid-swiss {
+  display: grid;
+  grid-auto-flow: dense;
+  gap: 24px;
+}
+
+.grid-swiss-2 {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.grid-swiss-3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.grid-swiss-4 {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+@media (max-width: 1024px) {
+  .grid-swiss-4 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .grid-swiss-2,
+  .grid-swiss-3,
+  .grid-swiss-4 {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Minimal Borders */
+.border-thin {
+  border: 1px solid var(--border);
+}
+
+.border-top-thin {
+  border-top: 1px solid var(--border);
+}
+
+.border-bottom-thin {
+  border-bottom: 1px solid var(--border);
+}
+
+/* Generous Whitespace */
+.space-generous {
+  padding: 40px;
+}
+
+.space-generous-horizontal {
+  padding-left: 40px;
+  padding-right: 40px;
+}
+
+.space-generous-vertical {
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
