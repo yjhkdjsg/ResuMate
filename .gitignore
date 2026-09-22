@@ -1,2 +1,16 @@
 node_modules
 .env
+.env.local
+.env.*.local
+dist
+build
+coverage
+.nyc_output
+.eslintcache
+.vite
+*.tsbuildinfo
+*.tgz
+*.log
+.DS_Store
+.vscode
+.idea
